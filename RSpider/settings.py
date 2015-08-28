@@ -119,3 +119,9 @@ REDIS_PORT = 6378
 # 如果设置了这一项，则程序会有限采用此项设置，忽略REDIS_HOST 和 REDIS_PORT的设置
 #REDIS_URL = 'redis://user:pass@hostname:9001'
 #------------end scrapy-redis----------------------------
+
+
+#------------graphite setting ---------------------------
+STATS_CLASS = 'RSpider.statscol.graphite.RedisGraphiteStatsCollector'
+GRAPHITE_HOST = '192.168.0.107'
+GRAPHITE_PORT = 2003

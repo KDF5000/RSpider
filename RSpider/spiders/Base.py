@@ -24,3 +24,6 @@ class BaseSpider(CrawlSpider):
             tl.add_css('link', 'a::attr(href)')
             tl.add_value('url', response.url)
             yield tl.load_item()
+
+    def spider_closed(self):
+        pass
