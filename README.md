@@ -68,7 +68,7 @@ REDIS_PORT = 6378
 ####配置`graphite`
 ##### 安装`graphite`
 目前`graphite`不支持`Windows`,所以使用`Windows`的用户要么在自己电脑搭个虚拟环境，要么在一台可以访问的`Linux`主机搭建该服务。如果有时间研究一下`Docker`自己写个镜像。
-具体安装参考[http://baidu.com]()
+具体安装参考[Ubuntu 14.04 安装图形监控工具Graphite](http://baidu.com](http://kdf5000.github.io/2015/08/28/Ubuntu-14-04-%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7Graphite/)
 
 ##### `Scrapy`配置`graphite`
 该模板源码自定一个`scrapy`的[Stats Collection](http://doc.scrapy.org/en/latest/topics/stats.html),封装了`graphite client`使用[plaintext protocol](http://graphite.readthedocs.org/en/latest/feeding-carbon.html)发送数据到`graphite`所在服务器的`Carbon`,客户端的使用可以查看`statscol/graphite.py`文件
