@@ -2,17 +2,17 @@
 一个基于scrapy-redis的分布式爬虫模板，在scrapy-redis自带的example的基础上进行修改，添加在实际爬取过程中大部分爬虫可能用到的功能，使的构建分布式爬虫更加的简单。
 scrapy-redis: [https://github.com/darkrho/scrapy-redis](https://github.com/darkrho/scrapy-redis)
 
-###安装`Redis`
+### 安装`Redis`
 ####`Windows`
 `Redis`官网没有`windows`的安装程序，但是微软的`MsOpenTech`团队维护了`Windows`的`Redis`，编译了可执行程序，需要的可以到[https://github.com/MSOpenTech/redis/releases](https://github.com/MSOpenTech/redis/releases)下载
-####`Ubuntu`
+#### `Ubuntu`
 ```
 $sudo apt-get install redis-server
 ```
-####`Redis`图形化管理
+#### `Redis`图形化管理
 下载地址：[https://github.com/cinience/RedisStudio/releases](https://github.com/cinience/RedisStudio/releases)
 
-###安装`Scrapy-redis`
+### 安装`Scrapy-redis`
 `scrapy-redis`GitHub地址：[https://github.com/darkrho/scrapy-redis](https://github.com/darkrho/scrapy-redis)
 
 推荐使用`pip`安装
@@ -20,12 +20,12 @@ $sudo apt-get install redis-server
 $pip install scrapy-redis
 ```
 
-###使用`BSpider`
+### 使用`BSpider`
 从`GitHub`克隆仓库，克隆成功即可得到一个可以运行的爬虫，该爬虫默认已经配置好了`Redis`,`worker`以及用户代理等功能
 ```
 $ git clone https://github.com/KDF5000/RSpider.git
 ```
-####配置`Scrapy-redis`
+#### 配置`Scrapy-redis`
 `Scrapy-redis`的所有配置到放在`setting.py`的特定位置，如下面所示，每个配置项代表什么意思注释已经详细的说明，不需要过多解释，如果不想使用`Scrapy-redis`将所有配置项注释掉即可
 
 ```
@@ -65,7 +65,7 @@ REDIS_PORT = 6378
 ```
 
 
-####配置`graphite`
+#### 配置`graphite`
 ##### 安装`graphite`
 目前`graphite`不支持`Windows`,所以使用`Windows`的用户要么在自己电脑搭个虚拟环境，要么在一台可以访问的`Linux`主机搭建该服务。如果有时间研究一下`Docker`自己写个镜像。
 具体安装参考[Ubuntu 14.04 安装图形监控工具Graphite](http://kdf5000.github.io/2015/08/28/Ubuntu-14-04-%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7Graphite/)
@@ -73,7 +73,7 @@ REDIS_PORT = 6378
 ##### `Scrapy`配置`graphite`
 该模板源码自定一个`scrapy`的[Stats Collection](http://doc.scrapy.org/en/latest/topics/stats.html),封装了`graphite client`使用[plaintext protocol](http://graphite.readthedocs.org/en/latest/feeding-carbon.html)发送数据到`graphite`所在服务器的`Carbon`,客户端的使用可以查看`statscol/graphite.py`文件
 
-####无图无真相
+#### 无图无真相
 ![](http://7sbpmg.com1.z0.glb.clouddn.com/img_scrapy_graphite_cmd.png)
 
 ![](http://7sbpmg.com1.z0.glb.clouddn.com/img_scrapy_graphite.png)
